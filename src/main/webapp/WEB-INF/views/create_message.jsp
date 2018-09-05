@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="utf8">
+<link rel="stylesheet" href="create_message.css">
 <title>HumanContact</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -86,8 +87,8 @@
 				<!-- Saisir le message -->
 				<div class="col-md-4 mb-3">
 					<label for="validationMsg">Message</label> <input
-						type="date" class="form-control" id="validationMsg"
-						placeholder="date de naissance" required>
+						type="text" class="form-control" id="validationMsg"
+						placeholder="Message" required>
 					<div class="invalid-feedback">Le message est obligatoire</div>
 				</div>
 

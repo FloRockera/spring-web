@@ -1,0 +1,29 @@
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+* {
+	padding: 10px;
+	text-align: center;
+}
+
+header {
+	width: 100%;
+	background-color: tomato;
+}
+
+.left-aside {
+	background-color: gold;
+}
+
+.right-aside {
+	background-color: hotpink;
+}
+
+#main {
+	background-color: deepskyblue;
+}
+
+footer {
+	background-color: lightgreen;
+}

@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="utf8">
+<link rel="stylesheet" href="list.css">
 <title>HumanContact</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,7 +52,7 @@
 
 	</nav>
 
-
+<div class=container>
 	<h2>Administration des messages</h2>
 
 	<!-- Liste avec itération -->
@@ -63,6 +64,7 @@
 				<th scope="col">Destinataire</th>
 				<th scope="col">Message</th>
 				<th scope="col">Date et heure</th>
+				<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -72,14 +74,30 @@
 
 					<td><c:out value="${variable.toUser}" /></td>
 
-					<td><c:out value="${variable.content}" /></td>
+					<td><c:out value="${variable.content}"/></td>
 
 					<td><c:out value="${variable.eventTime}" /></td>
+
+					<td><div class="btn-group btn-group-toggle"
+							data-toggle="buttons">
+							
+							<label class="btn btn-secondary active"> <input
+								type="radio" name="options" id="edit" autocomplete="off"
+								checked> Editer
+							</label>
+							
+							 <label class="btn btn-secondary"> <input type="radio"
+								name="options" id="delete" autocomplete="off"> Supprimer
+							</label>
+
+							 
+						</div></td>
 
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 
 
 </body>

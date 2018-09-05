@@ -19,12 +19,13 @@ import com.formation.dao.MessageDao;
 import com.formation.jdbc.MariaDBConfig;
 import com.formation.repository.MessageRepository;
 import com.formation.service.IMessageService;
+import com.formation.web.controller.AdminController;
 
 @Configuration
 @Import(MariaDBConfig.class)
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackageClasses = MessageRepository.class)
-@ComponentScan(basePackageClasses = { IMessageService.class, MessageDao.class })
+@ComponentScan(basePackageClasses = { AdminController.class, IMessageService.class, MessageDao.class })
 
 public class AppConfigMess {
 
