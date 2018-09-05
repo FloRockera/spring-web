@@ -10,7 +10,6 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 
 public class ViewWebApplicationInitialiser implements WebApplicationInitializer {
 
@@ -29,15 +28,11 @@ public class ViewWebApplicationInitialiser implements WebApplicationInitializer 
 		// Le chemin du servletContext est /humancontact
 		registration.addMapping("/humancontact/*");
 
-		FilterRegistration.Dynamic encodingFilter = servletContext.addFilter("utf8­encoding",
+		FilterRegistration.Dynamic encodingFilter = servletContext.addFilter("utf8-encoding",
 				new CharacterEncodingFilter("UTF-8", true));
 
 		encodingFilter.addMappingForUrlPatterns(null, false, "/*");
 
-	}
-
-	public void configureViewResolvers(ViewResolverRegistry registry) {
-		registry.jsp("/WEB-INF/views/", ".jsp");
 	}
 
 }

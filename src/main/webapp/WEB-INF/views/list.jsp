@@ -54,6 +54,8 @@
 
 		<h1>Administration des messages</h1>
 		
+		
+		${messages}
 	
 	</body>
 </html>
