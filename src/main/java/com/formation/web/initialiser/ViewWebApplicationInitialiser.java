@@ -10,6 +10,7 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 
 public class ViewWebApplicationInitialiser implements WebApplicationInitializer {
 
@@ -33,6 +34,10 @@ public class ViewWebApplicationInitialiser implements WebApplicationInitializer 
 
 		encodingFilter.addMappingForUrlPatterns(null, false, "/*");
 
+	}
+
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		registry.jsp("/WEB-INF/views/", ".jsp");
 	}
 
 }

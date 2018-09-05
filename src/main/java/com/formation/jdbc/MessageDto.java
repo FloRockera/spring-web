@@ -2,24 +2,12 @@ package com.formation.jdbc;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.Entity;
-
-@Entity
 public class MessageDto {
 
-	private int idmessage;
 	private String fromUser;
 	private String toUser;
 	private String content;
 	private LocalDateTime eventTime;
-
-	public int getIdmessage() {
-		return idmessage;
-	}
-
-	public void setIdmessage(int idmessage) {
-		this.idmessage = idmessage;
-	}
 
 	public String getFromUser() {
 		return fromUser;
