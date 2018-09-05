@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.jdbc.MessageDto;
+import com.formation.jdbc.MessageDto;
 
 public class MessageMapper<T> implements RowMapper {
 	public T mapRow(ResultSet rs, int rowNum) throws SQLException {

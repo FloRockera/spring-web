@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.formation.jdbc.MessageDto;
 import com.formation.service.IMessageService;
-import com.jdbc.MessageDto;
 
 public class ChatConsole {
 

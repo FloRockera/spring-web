@@ -15,11 +15,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.dao.MessageDao;
+import com.formation.dao.MessageDao;
+import com.formation.jdbc.MariaDBConfig;
 import com.formation.repository.MessageRepository;
 import com.formation.service.IMessageService;
 import com.formation.user.ChatConsole;
-import com.jdbc.MariaDBConfig;
 
 @Configuration
 @Import(MariaDBConfig.class)

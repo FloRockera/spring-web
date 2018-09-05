@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dao.MessageDao;
+import com.formation.dao.MessageDao;
+import com.formation.jdbc.Message;
+import com.formation.jdbc.MessageDto;
 import com.formation.repository.MessageRepository;
-import com.jdbc.Message;
-import com.jdbc.MessageDto;
 
 @Service
 @Transactional
@@ -53,10 +53,12 @@ public class MessageServiceImpl implements IMessageService {
 
 	@Override
 	public List<MessageDto> findMessageSendToAUserADay(String toUser, LocalDate day) {
-		List<Message> messages = repository.findByToUserAndEventTimeBetween(toUser, day, LocalDate.now());
-		return messages.stream().map(e -> {
-			return fromMessageToMessageDto(e);
-		}).collect(Collectors.toList());
+		// List<Message> messages =
+		// repository.findByToUserAndEventTimeBetween(toUser, day,
+		// LocalDate.now());
+		// return messages.stream().map(e -> {
+		// return fromMessageToMessageDto(e);
+		// }).collect(Collectors.toList());
 		return null;
 	}
 

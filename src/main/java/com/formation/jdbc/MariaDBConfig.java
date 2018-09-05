@@ -1,4 +1,4 @@
-package com.jdbc;
+package com.formation.jdbc;
 
 import javax.sql.DataSource;
 

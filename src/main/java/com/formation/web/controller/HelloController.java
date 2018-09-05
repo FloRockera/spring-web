@@ -1,4 +1,4 @@
-package com.web.controller;
+package com.formation.web.controller;
 
 import java.text.MessageFormat;
 
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/healthcheck")
 public class HelloController {
 
-	@GetMapping("/")
+	@GetMapping("/simple")
 	@ResponseBody
 	public String simple() {
 		return "Ok!";
 	}
 
-	@GetMapping("/healthcheck/{user}")
+	@GetMapping("/variable/{user}")
 	@ResponseBody
 	public String variable(@PathVariable String user) {
 		return MessageFormat.format("Hi {0}", user);

@@ -1,8 +1,8 @@
-package com.dao;
+package com.formation.dao;
 
 import java.time.LocalDateTime;
 
-import com.jdbc.Message;
+import com.formation.jdbc.Message;
 
 public interface MessageDao {
 

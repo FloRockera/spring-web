@@ -1,4 +1,4 @@
-package com.dao;
+package com.formation.dao;
 
 import java.time.LocalDateTime;
 
@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.jdbc.Message;
+import com.formation.jdbc.Message;
 
 @Repository
 public class MessageDaoImpl implements MessageDao {
@@ -22,7 +22,7 @@ public class MessageDaoImpl implements MessageDao {
 	}
 
 	@Override
-	public void delete(String toUser) {
+	public void delete(String toUser, String fromUser) {
 		// TODO Auto-generated method stub
 
 	}
