@@ -8,7 +8,7 @@
 <title>HumanContact</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 <!-- Bootstrap CSS -->
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -45,17 +45,38 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="#">Admin<span
 						class="sr-only">(current)</span></a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Chat</a>
-				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Chat</a></li>
+			</ul>
 		</div>
 		</div>
 	</nav>
 
 
-		<h1>Administration des messages</h1>
-		
-		
-		${messages}
-	
-	</body>
+	<h2>Administration des messages</h2>
+
+	<!-- Liste avec itération -->
+	<c:out value="Messagerie"></c:out>
+	<hr size="4" color="gray" />
+	<table>
+		<c:forEach items="${messages}" var="variable">
+			<tr>
+				<th>Expéditeur<c:out value="${variable.fromUser}">
+						<th>
+					</c:out>
+				<th>Destinataire<c:out value="${variable.toUser}">
+						<th>
+					</c:out>
+				<th>Message<c:out value="${variable.content}">
+						<th>
+					</c:out>
+				<th>Date et heure<c:out value="${variable.eventTime}">
+						<th>
+					</c:out>
+			</tr>
+		</c:forEach>
+
+	</table>
+
+
+</body>
 </html>

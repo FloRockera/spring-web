@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.formation.jdbc.MessageDto;
 
@@ -16,19 +16,39 @@ import com.formation.jdbc.MessageDto;
 public class AdminController {
 
 	@GetMapping("/messages")
-	public String listModel(Model model) {
+	public ModelAndView ListWithMessage() {
+		ModelAndView modelAndView = new ModelAndView();
 
 		List<MessageDto> messages = new ArrayList<>();
 
 		MessageDto message1 = new MessageDto();
-		message1.setFromUser("exp");
-		message1.setToUser("dest");
-		message1.setContent("hello");
+		message1.setFromUser("Vincent");
+		message1.setToUser("Lena");
+		message1.setContent("Salut Lena");
 		message1.setEventTime(LocalDateTime.now());
+
 		messages.add(message1);
 
-		model.addAttribute("messages", messages);
-		return "list";
+		modelAndView.addObject("messages", messages);
+		modelAndView.setViewName("list");
+		return modelAndView;
+
+		// Autre méthode
+		// @GetMapping("/messages")
+		// public String listModel(Model model) {
+		//
+		// List<MessageDto> messages = new ArrayList<>();
+		//
+		// MessageDto message1 = new MessageDto();
+		// message1.setFromUser("Vincent");
+		// message1.setToUser("Lena");
+		// message1.setContent("Salut Lena");
+		// message1.setEventTime(LocalDateTime.now());
+		//
+		// messages.add(message1);
+		//
+		// model.addAttribute("messages", messages);
+		// return "list";
 	}
 
 }
