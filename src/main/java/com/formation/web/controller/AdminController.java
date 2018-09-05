@@ -51,4 +51,11 @@ public class AdminController {
 		// return "list";
 	}
 
+	@GetMapping("/messages/new")
+	public ModelAndView CreateMessage() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("create_message");
+		return modelAndView;
+	}
+
 }

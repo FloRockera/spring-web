@@ -53,34 +53,80 @@
 	</nav>
 
 
-	<h2>Administration des messages</h2>
+	<h2>Formulaire</h2>
 
-	<!-- Liste avec itération -->
+<!-- Formulaire -->
+	<div class="container">
+		<h2>Créer un nouveau message</h2>
 
-	<table class="table table-dark">
-		<thead>
-			<tr>
-				<th scope="col">Expéditeur</th>
-				<th scope="col">Destinataire</th>
-				<th scope="col">Message</th>
-				<th scope="col">Date et heure</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${messages}" var="variable">
-				<tr>
-					<td><c:out value="${variable.fromUser}" /></td>
+		<!-- Formulaire d'ajout d'un nouveau message -->
+		<form class="needs-validation" novalidate>
+			<div class="form-row">
 
-					<td><c:out value="${variable.toUser}" /></td>
+				<!-- Saisir l'expéditeur-->
+				<div class="col-md-4 mb-3">
+					<label for="validationExp">Utilisateur expéditeur</label> <input type="text"
+						class="form-control" id="validationExp" placeholder="Utilisateur expéditeur"
+						required>
+					<div class="invalid-feedback">L'utilisateur expéditeur est obligatoire</div>
+				</div>
 
-					<td><c:out value="${variable.content}" /></td>
+				<div class="w-100"></div>
 
-					<td><c:out value="${variable.eventTime}" /></td>
+				<!-- Saisir le destinataires -->
+				<div class="col-md-4 mb-3">
+					<label for="validationDest">Utilisateur destinataire</label> <input type="text"
+						class="form-control" id="validationDest" placeholder="Utilisateur destinataire"
+						required>
+					<div class="invalid-feedback">L'utilisateur destinataire est obligatoire</div>
+				</div>
 
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+				<div class="w-100"></div>
+
+				<!-- Saisir le message -->
+				<div class="col-md-4 mb-3">
+					<label for="validationMsg">Message</label> <input
+						type="date" class="form-control" id="validationMsg"
+						placeholder="date de naissance" required>
+					<div class="invalid-feedback">Le message est obligatoire</div>
+				</div>
+
+
+				<div class="w-100"></div>
+
+			</div>
+
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target="#exampleModal">Créer</button>
+
+		</form>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Création d'un message</h5>
+					<div class="w-100"></div>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Vous êtes sur le point de créer un nouveau message</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Fermer</button>
+					<button type="button" class="btn btn-primary">Valider</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 </body>
