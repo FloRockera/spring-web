@@ -26,12 +26,11 @@ public class ViewWebApplicationInitialiser implements WebApplicationInitializer 
 		ServletRegistration.Dynamic registration = servletContext.addServlet("view", servlet);
 		registration.setLoadOnStartup(1);
 		// Le chemin du servletContext est /humancontact
-		registration.addMapping("/humancontact");
+		registration.addMapping("/humancontact/*");
 
 		FilterRegistration.Dynamic encodingFilter = servletContext.addFilter("utf8­encoding",
-				new CharacterEncodingFilter());
-		encodingFilter.setInitParameter("encoding", "UTF­8");
-		encodingFilter.setInitParameter("forceEncoding", "true");
+				new CharacterEncodingFilter("UTF-8", true));
+
 		encodingFilter.addMappingForUrlPatterns(null, false, "/*");
 
 	}

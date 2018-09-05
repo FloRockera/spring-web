@@ -84,6 +84,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- dependance à jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<properties>
