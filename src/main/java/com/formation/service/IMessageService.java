@@ -3,7 +3,7 @@ package com.formation.service;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.formation.jdbc.MessageDto;
+import com.formation.model.MessageDto;
 
 public interface IMessageService {
 

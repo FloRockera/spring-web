@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.formation.service.IMessageService;
@@ -14,8 +15,8 @@ public class AdminController {
 	@Autowired
 	IMessageService serv;
 
-	@GetMapping("/messages")
-	public ModelAndView ListWithMessage() {
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView directWithMessage() {
 		ModelAndView modelAndView = new ModelAndView();
 
 		// List<MessageDto> messages = new ArrayList<>();
@@ -28,8 +29,8 @@ public class AdminController {
 		//
 		// messages.add(message1);
 
-		modelAndView.addObject("messages", serv.findAllMessages());
 		modelAndView.setViewName("list");
+		modelAndView.addObject("messages", serv.findAllMessages());
 		return modelAndView;
 	}
 

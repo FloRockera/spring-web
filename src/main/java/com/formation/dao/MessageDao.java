@@ -2,7 +2,7 @@ package com.formation.dao;
 
 import java.time.LocalDateTime;
 
-import com.formation.jdbc.Message;
+import com.formation.entity.Message;
 
 public interface MessageDao {
 

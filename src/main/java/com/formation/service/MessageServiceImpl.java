@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.formation.dao.MessageDao;
-import com.formation.jdbc.Message;
-import com.formation.jdbc.MessageDto;
+import com.formation.entity.Message;
+import com.formation.model.MessageDto;
 import com.formation.repository.MessageRepository;
 
 @Service

@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.formation.jdbc.Message;
+import com.formation.entity.Message;
 
 @Repository
 public class MessageDaoImpl implements MessageDao {

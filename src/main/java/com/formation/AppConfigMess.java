@@ -3,7 +3,6 @@ package com.formation;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.formation.dao.MessageDao;
-import com.formation.jdbc.MariaDBConfig;
+import com.formation.db.MariaDBConfig;
 import com.formation.repository.MessageRepository;
 import com.formation.service.IMessageService;
 import com.formation.web.controller.AdminController;
@@ -36,7 +35,6 @@ public class AppConfigMess {
 		return txManager;
 	}
 
-	@Autowired
 	@Bean
 	public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
