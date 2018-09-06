@@ -1,6 +1,7 @@
 <%@ page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -97,99 +98,7 @@
 	</div>
 
 
-	<!-- Modal EDITER-->
-	<div class="modal fade" id="modalEditer" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="CreationFormulaire">Création d'un
-						message</h5>
-					<div class="w-100"></div>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">Vous êtes sur le point de créer un
-					nouveau message</div>
-
-				<!-- Formulaire d'ajout d'un nouveau message -->
-				<div class="container">
-					<form class="needs-validation" novalidate>
-						<div class="form-row">
-
-							<!-- Saisir l'expéditeur-->
-							<div class="col-md-4 mb-3">
-								<label for="validationExp">Utilisateur expéditeur</label> <input
-									type="text" class="form-control" id="validationExp"
-									placeholder="Utilisateur expéditeur" required>
-								<div class="invalid-feedback">L'utilisateur expéditeur est
-									obligatoire</div>
-							</div>
-
-							<div class="w-100"></div>
-
-							<!-- Saisir le destinataires -->
-							<div class="col-md-4 mb-3">
-								<label for="validationDest">Utilisateur destinataire</label> <input
-									type="text" class="form-control" id="validationDest"
-									placeholder="Utilisateur destinataire" required>
-								<div class="invalid-feedback">L'utilisateur destinataire
-									est obligatoire</div>
-							</div>
-
-							<div class="w-100"></div>
-
-							<!-- Saisir le message -->
-							<div class="col-md-4 mb-3">
-								<label for="validationMsg">Message</label> <input type="text"
-									class="form-control" id="validationMsg" placeholder="Message"
-									required>
-								<textarea class="form-control" id="exampleFormControlTextarea1"
-									rows="3"></textarea>
-								<div class="invalid-feedback">Le message est obligatoire</div>
-							</div>
-						</div>
-					</form>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Fermer</button>
-					<button type="button" class="btn btn-primary">Valider</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- Modal SUPPRIMER-->
-	<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="CreationFormulaire">Suppression
-						d'un message</h5>
-					<div class="w-100"></div>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">Vous êtes sur le point de supprimer un
-					nouveau message</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Fermer</button>
-					<button type="button" class="btn btn-primary">Valider</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 
 </body>
 </html>

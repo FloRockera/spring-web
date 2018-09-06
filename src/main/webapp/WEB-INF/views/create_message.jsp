@@ -56,69 +56,54 @@
 
 	<h2>Formulaire</h2>
 
-	<!-- Formulaire -->
+	<!-- Formulaire d'ajout d'un nouveau message -->
 	<div class="container">
-		<h2>Créer un nouveau message</h2>
 
-		<!-- Formulaire d'ajout d'un nouveau message -->
 		<c:url var="formAction"
-			value="${requestScope['javax.servlet.forward.servlet_path']}/messages/new">
-			<form:form modelAttribute="messages" action="${formAction}">
-
-				<form:errors path="*" cssClass="errorBox" />
-
-				<div class="row">
-
-					<!-- Saisir l'expéditeur-->
-					<div class="col label">
-						<label for="fromUserInput">Utilisateur expéditeur</label>
-					</div>
-					<div class="col input">
-						<form:input class="form-control" path="fromUser"
-							id="fromUserInput" type="text"
-							placeholder="Utilisateur expéditeur" required />
-					</div>
-					<div class="invalid-feedback">L'utilisateur expéditeur est
-						obligatoire</div>
+			value="${requestScope['javax.servlet.forward.servlet_path']}/admin/messages/new" />
 
 
-					<div class="w-100"></div>
+		<form:form method="POST" action="${formAction}"
+			modelAttribute="message">
 
-					<!-- Saisir le destinataires -->
-					<div class="col label">
-						<label for="toUserInput">Utilisateur destinataire</label>
-					</div>
-					<div class="col input">
-						<form:input class="form-control" path="toUser" id="toUserInput"
-							type="text" placeholder="Utilisateur destinataire" required />
-					</div>
-					<div class="invalid-feedback">L'utilisateur destinataire est
-						obligatoire</div>
+			<form:errors path="*" cssClass="invalid-feedback"
+				cssStyle="display:block" />
 
-					<div class="w-100"></div>
+			<div class="form-row">
 
-					<!-- Saisir le message -->
-					<div class="col label">
-						<label for="contentInput">Message</label>
-					</div>
-					<div class="col input">
-						<form:input class="form-control" path="content" id="content"
-							type="text" placeholder="Message" required />
-					</div>
-					<div class="invalid-feedback">Le message est obligatoire</div>
-
-
-					<div class="w-100"></div>
-
+				<!-- Saisir l'expéditeur-->
+				<div class="col">
+					<label for="fromUser">Utilisateur expéditeur</label>
+					<form:input path="fromUser" class="form-control" id="fromUser"
+						placeholder="Expéditeur" />
+					<form:errors path="fromUser" cssClass="invalid-feedback"
+						cssStyle="display:block" />
 				</div>
 
+				<div class="w-100"></div>
 
-				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal"
-					data-target="#exampleModal">Créer</button>
+				<!-- Saisir le destinataires -->
+				<div class="col">
+					<label for="toUser">Utilisateur destinataire</label>
+					<form:input path="toUser" class="form-control" id="toUser"
+						placeholder="Destinataire" />
+					<form:errors path="toUser" cssClass="invalid-feedback"
+						cssStyle="display:block" />
+				</div>
 
-			</form:form>
-		</c:url>
+				<div class="w-100"></div>
+
+				<!-- Saisir le message -->
+				<div class="col">
+					<label for="content">Message</label>
+					<form:textarea path="content" class="form-control" id="content"
+						placeholder="Message" rows="3" />
+					<form:errors path="toUser" cssClass="invalid-feedback"
+						cssStyle="display:block" />
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Valider</button>
+		</form:form>
 	</div>
 
 
