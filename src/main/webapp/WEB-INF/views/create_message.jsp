@@ -56,53 +56,69 @@
 
 	<h2>Formulaire</h2>
 
-<!-- Formulaire -->
+	<!-- Formulaire -->
 	<div class="container">
 		<h2>Créer un nouveau message</h2>
 
 		<!-- Formulaire d'ajout d'un nouveau message -->
-		<form class="needs-validation" novalidate>
-			<div class="form-row">
+		<c:url var="formAction"
+			value="${requestScope['javax.servlet.forward.servlet_path']}/messages/new">
+			<form:form modelAttribute="messages" action="${formAction}">
 
-				<!-- Saisir l'expéditeur-->
-				<div class="col-md-4 mb-3">
-					<label for="validationExp">Utilisateur expéditeur</label> <input type="text"
-						class="form-control" id="validationExp" placeholder="Utilisateur expéditeur"
-						required>
-					<div class="invalid-feedback">L'utilisateur expéditeur est obligatoire</div>
-				</div>
+				<form:errors path="*" cssClass="errorBox" />
 
-				<div class="w-100"></div>
+				<div class="row">
 
-				<!-- Saisir le destinataires -->
-				<div class="col-md-4 mb-3">
-					<label for="validationDest">Utilisateur destinataire</label> <input type="text"
-						class="form-control" id="validationDest" placeholder="Utilisateur destinataire"
-						required>
-					<div class="invalid-feedback">L'utilisateur destinataire est obligatoire</div>
-				</div>
+					<!-- Saisir l'expéditeur-->
+					<div class="col label">
+						<label for="fromUserInput">Utilisateur expéditeur</label>
+					</div>
+					<div class="col input">
+						<form:input class="form-control" path="fromUser"
+							id="fromUserInput" type="text"
+							placeholder="Utilisateur expéditeur" required />
+					</div>
+					<div class="invalid-feedback">L'utilisateur expéditeur est
+						obligatoire</div>
 
-				<div class="w-100"></div>
 
-				<!-- Saisir le message -->
-				<div class="col-md-4 mb-3">
-					<label for="validationMsg">Message</label> <input
-						type="text" class="form-control" id="validationMsg"
-						placeholder="Message" required>
+					<div class="w-100"></div>
+
+					<!-- Saisir le destinataires -->
+					<div class="col label">
+						<label for="toUserInput">Utilisateur destinataire</label>
+					</div>
+					<div class="col input">
+						<form:input class="form-control" path="toUser" id="toUserInput"
+							type="text" placeholder="Utilisateur destinataire" required />
+					</div>
+					<div class="invalid-feedback">L'utilisateur destinataire est
+						obligatoire</div>
+
+					<div class="w-100"></div>
+
+					<!-- Saisir le message -->
+					<div class="col label">
+						<label for="contentInput">Message</label>
+					</div>
+					<div class="col input">
+						<form:input class="form-control" path="content" id="content"
+							type="text" placeholder="Message" required />
+					</div>
 					<div class="invalid-feedback">Le message est obligatoire</div>
+
+
+					<div class="w-100"></div>
+
 				</div>
 
 
-				<div class="w-100"></div>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#exampleModal">Créer</button>
 
-			</div>
-
-
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#exampleModal">Créer</button>
-
-		</form>
+			</form:form>
+		</c:url>
 	</div>
 
 
@@ -112,14 +128,16 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Création d'un message</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Création d'un
+						message</h5>
 					<div class="w-100"></div>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">Vous êtes sur le point de créer un nouveau message</div>
+				<div class="modal-body">Vous êtes sur le point de créer un
+					nouveau message</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Fermer</button>

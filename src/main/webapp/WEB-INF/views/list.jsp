@@ -78,16 +78,15 @@
 
 						<td><c:out value="${variable.eventTime}" /></td>
 
-						<td><div class="btn-group btn-group-toggle"
-								data-toggle="modal" data-target="#exampleModal">
+						<td><div class="btn-group btn-group-toggle">
 
-								<label class="btn btn-secondary active"> <input
-									type="radio" name="options" id="edit" autocomplete="off"
-									checked> Editer
-								</label> <label class="btn btn-secondary"> <input type="radio"
-									name="options" id="delete" autocomplete="off">
-									Supprimer
-								</label>
+								<!-- Button trigger modal EDITER -->
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#modalEditer">Editer</button>
+
+								<!-- Button trigger modal SUPPRIMER -->
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#modalDelete">Supprimer</button>
 
 							</div></td>
 
@@ -98,8 +97,8 @@
 	</div>
 
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+	<!-- Modal EDITER-->
+	<div class="modal fade" id="modalEditer" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -147,6 +146,8 @@
 								<label for="validationMsg">Message</label> <input type="text"
 									class="form-control" id="validationMsg" placeholder="Message"
 									required>
+								<textarea class="form-control" id="exampleFormControlTextarea1"
+									rows="3"></textarea>
 								<div class="invalid-feedback">Le message est obligatoire</div>
 							</div>
 						</div>
@@ -161,6 +162,34 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- Modal SUPPRIMER-->
+	<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="CreationFormulaire">Suppression
+						d'un message</h5>
+					<div class="w-100"></div>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Vous êtes sur le point de supprimer un
+					nouveau message</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Fermer</button>
+					<button type="button" class="btn btn-primary">Valider</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 </html>
