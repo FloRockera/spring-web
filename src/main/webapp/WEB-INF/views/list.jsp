@@ -90,7 +90,7 @@
 
 								<!-- Button SUPPRIMER -->
 								<form>
-									<input type="submit" name="Supprimer" value="texte du bouton">
+									<input type="submit" name="Supprimer" value="Supprimer">
 								</form>
 
 							</div></td>
