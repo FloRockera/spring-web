@@ -2,7 +2,6 @@ package com.formation.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +14,7 @@ public class AdminController {
 	@Autowired
 	IMessageService serv;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/messages", method = RequestMethod.GET)
 	public ModelAndView directWithMessage() {
 		ModelAndView modelAndView = new ModelAndView();
 
@@ -34,10 +33,12 @@ public class AdminController {
 		return modelAndView;
 	}
 
-	@GetMapping("/messages/new")
-	public ModelAndView CreateMessage() {
+	@RequestMapping(value = "/messages/new", method = RequestMethod.GET)
+	public ModelAndView coucou() {
 		ModelAndView modelAndView = new ModelAndView();
+
 		modelAndView.setViewName("create_message");
+		// modelAndView.addObject("messages", serv.findAllMessages());
 		return modelAndView;
 	}
 
