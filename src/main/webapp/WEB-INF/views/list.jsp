@@ -33,6 +33,8 @@
 </head>
 
 <body>
+	<c:url var="formAction"
+		value="${requestScope['javax.servlet.forward.servlet_path']}/admin/messages" />
 
 	<!-- Liste des onglets -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,13 +83,15 @@
 
 						<td><div class="btn-group btn-group-toggle">
 
-								<!-- Button trigger modal EDITER -->
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#modalEditer">Editer</button>
+								<!-- Button EDITER 
+								<button type="button" class="btn btn-primary" >Editer</button>-->
+								<a class="btn btn-primary" href="${formAction}/new"
+									role="button">Editer</a>
 
-								<!-- Button trigger modal SUPPRIMER -->
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#modalDelete">Supprimer</button>
+								<!-- Button SUPPRIMER -->
+								<form>
+									<input type="submit" name="Supprimer" value="texte du bouton">
+								</form>
 
 							</div></td>
 
@@ -98,7 +102,7 @@
 	</div>
 
 
-	
+
 
 </body>
 </html>

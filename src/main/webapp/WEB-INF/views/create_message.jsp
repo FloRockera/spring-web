@@ -54,10 +54,11 @@
 	</nav>
 
 
-	<h2>Formulaire</h2>
+	
 
 	<!-- Formulaire d'ajout d'un nouveau message -->
 	<div class="container">
+	<h3>Créer un message</h3>
 
 		<c:url var="formAction"
 			value="${requestScope['javax.servlet.forward.servlet_path']}/admin/messages/new" />
