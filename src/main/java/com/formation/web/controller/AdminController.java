@@ -28,7 +28,7 @@ public class AdminController {
 		//
 		// messages.add(message1);
 
-		modelAndView.setViewName("list");
+		modelAndView.setViewName("list2");
 		modelAndView.addObject("messages", serv.findAllMessages());
 		return modelAndView;
 	}
