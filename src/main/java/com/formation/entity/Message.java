@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +15,7 @@ public class Message {
 
 	@Id
 	@Column(name = "idmessage")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idmessage;
 
 	@Column(name = "fromUser")
@@ -29,10 +32,6 @@ public class Message {
 
 	public Message() {
 		super();
-	}
-
-	public Message(String fromUser2, String toUser2, String content2) {
-		// TODO Auto-generated constructor stub
 	}
 
 	// Methode toString

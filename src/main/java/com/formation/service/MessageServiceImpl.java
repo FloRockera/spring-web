@@ -1,6 +1,7 @@
 package com.formation.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,14 +27,23 @@ public class MessageServiceImpl implements IMessageService {
 
 	@Override
 	public void send(MessageDto message) {
-		Message newMessage = new Message(message.getFromUser(), message.getToUser(), message.getContent());
-		dao.save(newMessage);
+		Message newMessage = new Message();
+		newMessage.setFromUser(message.getFromUser());
+		newMessage.setToUser(message.getToUser());
+		newMessage.setContent(message.getContent());
+		newMessage.setEventTime(LocalDateTime.now());
+
+		repository.save(newMessage);
 
 	}
 
 	@Override
 	public void edit(MessageDto editedMsg) {
-		Message editeMessage = new Message(editedMsg.getFromUser(), editedMsg.getToUser(), editedMsg.getContent());
+		Message editeMessage = new Message();
+		editeMessage.setFromUser(editedMsg.getFromUser());
+		editeMessage.setToUser(editedMsg.getToUser());
+		editeMessage.setContent(editedMsg.getContent());
+		editeMessage.setEventTime(LocalDateTime.now());
 		dao.save(editeMessage);
 
 	}

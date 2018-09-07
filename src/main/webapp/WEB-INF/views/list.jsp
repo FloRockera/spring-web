@@ -83,15 +83,12 @@
 
 						<td><div class="btn-group btn-group-toggle">
 
-								<!-- Button EDITER 
-								<button type="button" class="btn btn-primary" >Editer</button>-->
+								<!-- Button EDITER -->
 								<a class="btn btn-primary" href="${formAction}/new"
 									role="button">Editer</a>
 
 								<!-- Button SUPPRIMER -->
-								<form>
-									<input type="submit" name="Supprimer" value="Supprimer">
-								</form>
+								<button type="button" class="btn btn-primary">Supprimer</button>
 
 							</div></td>
 
@@ -102,7 +99,30 @@
 	</div>
 
 
-
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Suppression
+						d'un message</h5>
+					<div class="w-100"></div>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Vous êtes sur le point de supprimer un
+					message</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Fermer</button>
+					<button type="button" class="btn btn-primary">Valider</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

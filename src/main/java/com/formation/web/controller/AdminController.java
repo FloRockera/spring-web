@@ -62,9 +62,10 @@ public class AdminController {
 		if (result.hasErrors()) {
 			return "create_message";
 		}
+		serv.send(message);
 		System.out.println("Enregistre le message " + message.getFromUser() + " " + message.getToUser() + " "
 				+ message.getContent());
-		return "list";
+		return "redirect:./";
 
 	}
 }

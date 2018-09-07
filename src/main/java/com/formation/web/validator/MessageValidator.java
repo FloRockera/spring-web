@@ -19,7 +19,13 @@ public class MessageValidator implements Validator {
 		ValidationUtils.rejectIfEmpty(errors, "toUser", "required", "Le destinataire est obligatoire");
 		ValidationUtils.rejectIfEmpty(errors, "content", "required", "Le message est obligatoire");
 
-		// Message message = (Message) target;
+		MessageDto messageDto = (MessageDto) target;
+		if (!(messageDto.getToUser().isEmpty()) && !(Character.isUpperCase(messageDto.getToUser().charAt(0)))) {
+
+			errors.rejectValue("toUser", "negativeValue", new Object[] { "'toUser'" },
+					"Le nom du destinataire doit commencer par une majuscule");
+
+		}
 
 	}
 

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import com.formation.AppConfigMess;
 import com.formation.web.controller.HelloController;
@@ -18,7 +19,7 @@ public class ServiceConfig implements WebMvcConfigurer {
 
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
-		registry.jsp("/WEB-INF/views/", ".jsp");
+		registry.enableContentNegotiation(new MappingJackson2JsonView());
 	}
 
 }

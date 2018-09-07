@@ -65,7 +65,7 @@
 
 
 		<form:form method="POST" action="${formAction}"
-			modelAttribute="message">
+			modelAttribute="message" id="CreationForm">
 
 			<form:errors path="*" cssClass="invalid-feedback"
 				cssStyle="display:block" />
@@ -99,38 +99,12 @@
 					<label for="content">Message</label>
 					<form:textarea path="content" class="form-control" id="content"
 						placeholder="Message" rows="3" />
-					<form:errors path="toUser" cssClass="invalid-feedback"
+					<form:errors path="content" cssClass="invalid-feedback"
 						cssStyle="display:block" />
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Valider</button>
+			<button type="submit" class="btn btn-primary" onclick="document.getElementById('CreationForm')">Valider</button>
 		</form:form>
-	</div>
-
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Création d'un
-						message</h5>
-					<div class="w-100"></div>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">Vous êtes sur le point de créer un
-					nouveau message</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Fermer</button>
-					<button type="button" class="btn btn-primary">Valider</button>
-				</div>
-			</div>
-		</div>
 	</div>
 
 
